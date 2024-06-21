@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: #93CBF3;
+    color: #E0C4Fa;
+    gap: 2rem;
+}
+
+h1 {
+    font-size: 2.4rem;
+    text-shadow: 2px 2px #1FAEFA;
+    color: #F1F997;
+}
+
+.clock {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    font-size: 6rem;
+    gap: 2rem;
+}
+
+.hour,
+.minutes,
+.seconds {
+    position: relative;
+    padding: 1.8rem;
+    background: #F3F3F8;
+    border: 4px dashed #1FAEFA;
+    border-radius: 4px;
+    animation: borderAnimation 4s linear infinite;
+}
+
+@keyframes borderAnimation {
+    0% {
+        border-top: 4px dashed #1FAEFA;
+        border-right: 4px dashed transparent;
+        border-bottom: 4px dashed transparent;
+        border-left: 4px dashed transparent;
+    }
+    25% {
+        border-top: 4px dashed transparent;
+        border-right: 4px dashed #1FAEFA;
+        border-bottom: 4px dashed transparent;
+        border-left: 4px dashed transparent;
+    }
+    50% {
+        border-top: 4px dashed transparent;
+        border-right: 4px dashed transparent;
+        border-bottom: 4px dashed #1FAEFA;
+        border-left: 4px dashed transparent;
+    }
+    75% {
+        border-top: 4px dashed transparent;
+        border-right: 4px dashed transparent;
+        border-bottom: 4px dashed transparent;
+        border-left: 4px dashed #1FAEFA;
+    }
+    100% {
+        border-top: 4px dashed #1FAEFA;
+        border-right: 4px dashed transparent;
+        border-bottom: 4px dashed transparent;
+        border-left: 4px dashed transparent;
+    }
+}
+
+.separator {
+    color: #F1F997;
+    animation: blink 1s steps(1, end) infinite;
+}
+
+@keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+
+.btn-stop {
+    height: 56px;
+    padding: 8px 50px;
+    font-size: 1.5rem;
+    color: #F1F997;
+    border: 0;
+    background: #C1CBF1;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-stop:hover {
+    background: #C1CBF1;
+    color: #F1F997;
+    box-shadow: 0 0 10px #C1CBF1, 0 0 40px #C1CBF1, 0 0 70px #C1CBF1;
+}
